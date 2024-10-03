@@ -1,0 +1,37 @@
+---
+title: "Welcome to My Data Visualisation Project"
+title-block-banner: "#012169"
+toc: true
+toc-location: right
+toc-title: "On this page:"
+css: styles.css
+---
+
+```{r include = FALSE}
+# Comment out a line
+library(tidyverse)
+
+# Load the data
+mtcars <- mtcars
+```
+
+
+# Introduction
+
+This is my data visualisation assignment!
+
+```{r}
+# Print the first few rows
+head(mtcars)
+
+mtcars %>%
+  ggplot(aes(x = mpg, y = hp)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  theme_minimal() +
+  labs(
+    x = "Miles per Gallon",
+    y = "Horsepower",
+    title = "MPG vs Horsepower in mtcars Dataset"
+  )
+```
